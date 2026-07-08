@@ -1,0 +1,50 @@
+[목표]
+RFP분석서를 참고하여 SRS작성 가이드에 따라 솔루션요구사항정의서(이하 SRS)를 작성  
+
+[역할]
+- 스펙이 주도적으로 수행
+- 다른 팀원이 협업하여 수행 
+
+[맥락]
+- 내 상황: 통신사 B2B 기획자를 위한 Claude Code 활용 SRS 작성 교육을 준비 중이며,   
+  RFP분석서와 SRS 작성 가이드를 근거로 SRS를 작성해야 함 
+- 결과물 독자: B2B 기획자 
+
+[입력]
+- RFP분석서: `work/rfp/rfp-analyze.md`
+- SRS 작성 가이드: `work/srs/srs-guide.md`
+- SRS 주요 항목:
+  - 고객사 문제 정의
+  - 제안 솔루션의 기능·범위
+  - 기술 요건 · 데이터 요건
+  - 인수 기준(Acceptance Criteria)
+[처리]
+- 입력정보 파악 및 이해 (리서처)
+- SRS 아젠다 작성
+  - 아젠다 초안: 스펙이 수립 
+  - 아젠다 리뷰(병렬): 모든 팀원이 각자 관점에서 누락·중복 점검
+  - 출력파일: `work/srs/srs-agenda.md`
+  - 아젠다 확정 후 나(요청자)에게 승인 요청 — 승인 전 다음 단계 진행 금지
+- SRS 초안 작성: 스펙이 작성
+  - 출력파일: `work/srs/srs-draft.md`
+- SRS 리뷰 (역할별 병렬)
+  - 출력파일: `work/srs/srs-review-{팀원}.md`
+- SRS 완료: 스펙이 수행 - 리뷰 의견 반영
+  - 출력파일: `work/srs/srs.md`
+
+[출력]
+- SRS 아젠다: `work/srs/srs-agenda.md`
+- SRS 초안: `work/srs/srs-draft.md`
+- SRS 리뷰: `work/srs/srs-review-{팀원}.md`
+- SRS(최종): `work/srs/srs.md`
+
+[제약조건]
+- MUST
+  - 추가 정보나 의사결정이 필요하면 즉시 나(요청자)에게 요청
+  - 아젠다는 나의 승인 후에만 요구사항 추출·초안 작성 단계로 진행
+- MUST NOT
+
+- 완료조건 (검증 가능한 증거 기준)
+  - 모든 출력문서 생성 
+
+[예시]

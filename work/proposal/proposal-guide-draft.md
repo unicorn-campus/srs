@@ -1,0 +1,758 @@
+# 통신사 B2B 제안서 작성 가이드
+
+> 용도: 통신사 B2B 기획팀이 고객사 RFP를 받은 뒤 제안서를 **작성·제출·발표**할 때, 각 구성요소를  
+> 어떻게 채우는지 참고하는 실무 가이드임(벤더=수주자 관점).  
+> 근거 구성: (a) 작성 원칙은 사내 `제안서작성이론.md`(매뉴얼 제2장, 원문 페이지 (p.XX~XX) 표기)에,  
+> (b) 통신사 B2B 예시·문구의 외부자료는 팀원 정보수집 파일의 출처 URL을 **각주(`[^slug]` → 하단 정의부)**로 표기함.  
+> 이론·정보수집 파일에 실재하지 않는 URL은 지어내지 않음.  
+> 통합 팀원: 스토리텔러(1·2·7·9)·아키(3·4)·케어(4·6)·딜(4·5·6)·데모(4·7·9)·리서처(1·2·8·10)·스펙(2·10).  
+> **관점 반전(핵심 전제)**: 본 가이드는 `guides/rfp-guide.md`(발주자가 요구를 정의하는 관점)의 **정반대인  
+> 벤더가 그 요구에 회답하는 관점**임. 겹치는 주제(견적·SLA·스케줄·특기사항)의 요구 정의·산정 근거·규제  
+> 상세는 재서술하지 않고 rfp-guide 해당 섹션 **참조**로 넘겨 중복을 회피함(상호참조 지점은 하단 표 참조).
+
+---
+
+## 이 가이드 사용법
+
+- 각 섹션(## 1.~## 10.)은 rfp-guide와 **동일한 3단 구조**로 구성됨.  
+  - (a) 작성 원칙: 이론 원문 근거로 "무엇을 왜 쓰는가"를 규정함(모든 진술에 (p.XX~XX) 표기)  
+  - (b) 통신사 B2B 예시·문구: 제안서에 그대로 넣을 수 있는 각색 예시·문장을 제시하고, 외부자료는 각주로 표기함  
+  - (c) 작성 체크리스트: 누락 방지용 자가점검 항목을 제시함  
+- 제안서를 만들 때는 아래 "제안서 조립 순서"를 따라 섹션을 순차로 채움.  
+- 핵심 원칙은 「빠짐없이·중복없이·적게·알기쉽게」(MECE)임 — 요구에 빠짐없이 회답하되 본체는 얇게, 상세는  
+  별지로 돌리는 **2독자 원칙**이 문서 전체를 관통함 (p.63~66).  
+- SLA·이중화·견적·특기사항 등 rfp-guide와 겹치는 주제는 "제안서에 담는 방법"만 다루고, 정의·산정 근거·  
+  규제 상세는 rfp-guide 해당 섹션을 상호참조함.
+
+### 제안서 조립 순서
+
+1. 표지 → 인사 → 목차(일정수식어) 준비 (p.117~118)  
+2. ①제안취지 → ②제안대상영역(1부: 전체상) → ③시스템구성 → ④프로젝트내용 → ⑤운용체제(2부: 무엇을) →  
+   ⑥프로젝트체제 → ⑦스케줄 → ⑧견적(3부: 얼마에·언제까지) → ⑨특기사항 순으로 채움 (p.84~85, p.118~124)  
+3. RFP 요구에 **빠짐없이 회답**했는지 회답 대조표(별지)로 확인함 (p.71, p.81)  
+4. 문장은 **결론선행**, 본체/별지 경계는 **트리구조**로 정합성을 잡음 (p.86~88)  
+5. 제출 전 반드시 **제3자 리뷰(최소 1회)**를 거침 (p.95~96)  
+6. 문서 말미의 "통신사 B2B 제안서 작성 종합 체크리스트"로 최종 누락 점검 후 확정함
+
+### 통신사 B2B 제안서 골격 (일정수식어 + 8테마 + 특기사항 + 별지)
+
+- 일정수식어(표지·인사·목차) → ①제안취지 → ②제안대상영역 → ③시스템구성(개념도·네트워크·HW·SW) →  
+  ④프로젝트내용 → ⑤운용체제 → ⑥프로젝트체제 → ⑦스케줄 → ⑧견적 → ⑨특기사항 → 별지 (p.65~66)  
+- 통신사 특성상 **네트워크 구성도(§3)·SLA 등급 제안(§4)·PoC 실증(§4·§7·§9)·NRC/MRC 견적(§5)**을  
+  각 섹션에 배분하는 것이 일반 IT 제안 대비 핵심 차별점임.
+
+### 섹션 개관
+
+| Level1 섹션 | 근거 페이지 | 1차 오너 |
+|---|---|---|
+| 1. 좋은 제안서의 조건과 구성요소 | p.58~66 | 스토리텔러 |
+| 2. 일정수식어와 1부 — 표지·인사·목차·제안취지·제안대상영역 | p.67~72 | 스토리텔러·스펙 |
+| 3. 시스템 구성 — 개념도·네트워크·하드웨어·소프트웨어 | p.72~74 | 아키 |
+| 4. 프로젝트의 내용과 운용체제 — 수행방안·운용지원·SLA·연수·PoC | p.74~76 | 케어·딜·데모 |
+| 5. 프로젝트 체제·스케줄·견적 | p.76~79 | 딜·오케스트레이터 |
+| 6. 특기사항과 별지 | p.79~81 | 딜·스펙 |
+| 7. 제안 시나리오와 소구력 — 3부구성·결론선행·트리구조 | p.82~89 | 스토리텔러 |
+| 8. 제안서 작성 프로세스와 리뷰 | p.90~99 | 리서처·스토리텔러 |
+| 9. 프레젠테이션 | p.100~107 | 스토리텔러·데모 |
+| 10. 제안서 샘플·워크시트 활용 | p.117~124 | 스펙 |
+
+---
+
+## 1. 좋은 제안서의 조건과 구성요소
+
+### (a) 작성 원칙
+
+- 제안활동은 RFP 발행 전 **1차 제안**(수신처만 바꿔 재사용하는 범용 소개 자료)과 RFP 수령 후 **2차 제안**  
+  (고객을 깊이 이해해 커스터마이즈한 그 고객만의 제안서)으로 나뉘며, 2차 제안이 벤더의 "진짜 승부"임.  
+  목적은 단 하나, 수주임 (p.59~61).  
+- 싸기만 한 제안에 지지 않고 수주하는 제안서의 4요소 = ①RFP 요구를 라이벌보다 많이 충족(우선순위 높은  
+  요구 충족은 필수) ②요구 이상의 부가가치 ③매력 가격 ④위 모두를 **알기쉽게** 기술. ①~③은 제안내용 그  
+  자체이고, 제2장의 메인 테마는 ④ "알기쉽게"임 (p.61).  
+- 좋은 제안서 4조건 = **빠짐없이·중복없이·적게·알기쉽게**. 앞 둘은 문제해결 프레임워크 MECE의 제안서  
+  적용임. 구성요소 이해 부족이 제안서가 제각각·불필요하게 두꺼워지는 주요인임 (p.63).  
+- **Yes/No 명확 회답 원칙**: 충족 못하는 요구도 "충족 불가"로 회답하는 것이 회답이며, 전제조건을 명시한  
+  조건부 회답도 가능함. 중요한 것은 예스·노우가 확실한 것임. 애매·회피는 프레젠테이션에서 추궁당하고  
+  "누락" 있는 저완성 제안으로 인식되어 배점에서 감점됨 (p.63~64).  
+- **2독자 원칙**: 수령 창구는 정보시스템부서지만 최종 판단은 경영자·부서장(의사결정자)임. **본체는  
+  의사결정자용으로 「적게·알기쉽게」, 상세는 정보시스템부서용 별지**로 분리함. 제2장 전체를 관통하며  
+  §3(시스템구성)·§5(견적)·§6(별지)에서 반복 적용됨 (p.64~66).  
+- 필요충분 구성요소 = **일정수식어(표지·인사·목차) + 8개 테마 + 특기사항 + 별지**임 (p.65~66).
+
+### (b) 통신사 B2B 예시·문구
+
+- 통신사 B2B는 공모·경쟁 PT가 대부분이라 각 벤더의 내용·레벨감이 수렴함. 승부를 가르는 건 "무엇을  
+  넣었는가"보다 **"어떻게 보여줬는가"**이며, 4조건 중 특히 **알기쉽게**가 인프라 제안의 결정타임.  
+- 통신 제안서 대표 과적재 3종 = ①장비 스펙시트 나열 ②망 구성도 과밀화 ③약관·SLA 원문 붙여넣기. 세  
+  가지 모두 **별지로 내리고** 본체는 "이 제안이 고객 문제를 어떻게 푸는가"만 남김. 요약이 제안서에서 가장  
+  많이·먼저 읽히는 단일 섹션이라는 실무 근거와 정합함[^apmp-exec].  
+- MECE의 원류는 Barbara Minto가 McKinsey에서 정립한 원칙으로, 빠짐없이(CE)·중복없이(ME)를 제안서에  
+  물리적으로 강제하는 장치가 **RFP 회답 대조표**(요구ID↔제안서 페이지↔Y/N/조건부)임[^mece][^minto-mece].  
+  이 대조표가 평가위원 체크리스트와 1:1로 맞물려 "빠짐없이"를 시각적으로 증명하며, 필수(shall/must) 요구  
+  한 건 누락도 자동 실격으로 이어질 수 있음[^compliance-responsive]. RFP 요구ID·배점 정의는 rfp-guide  
+  §1·§9 참조.  
+- "매력 가격"은 절대 저가가 아니라 **효과 대비 가치·TCO·ROI**로 제시함이 B2B 정석임[^leveragepoint].  
+  차별적 특징(feature)은 고객 이점(benefit)과 연결한 win theme로 서술함[^shipley-disc].  
+
+  예시(부가가치 한 줄, 본체 상단 배치):  
+  > "본 제안은 RFP 필수요구 42개를 전부 충족(Y 42/42)하며, 요구 외 부가로 장애 영향범위 자동조회  
+  > 대시보드를 무상 제공하여 장애 인지에서 대고객 통지까지의 시간을 예시 기준 크게 단축함."  
+
+  예시(조건부 회답 문구):  
+  > "요구 R-27(단일 회선 가용률 99.99%)은 단일 경로로는 충족이 어려우며, 이중화 회선(주/예비 이원화)  
+  > 구성을 전제로 99.99%를 보증함 — 상세 산정 근거는 별지 3 참조."
+
+### (c) 작성 체크리스트
+
+- [ ] 2차 제안(고객 커스터마이즈)임을 전제로, 범용 자료 돌려쓰기가 아닌 그 고객만의 제안서로 작성했는가 (p.61)  
+- [ ] 4조건(빠짐없이·중복없이·적게·알기쉽게)을 본체 전체에 적용했는가 (p.63)  
+- [ ] 미충족 요구도 Yes/No + 전제조건·대안으로 명확 회답했는가(애매·회피 금지) (p.63~64)  
+- [ ] 본체는 의사결정자용으로 얇게, 상세는 별지로 분리했는가(2독자 원칙) (p.64~66)  
+- [ ] 필요충분 구성요소(일정수식어+8테마+특기사항+별지)를 모두 갖췄는가 (p.65~66)  
+- [ ] 필수 요구 전건 충족이 회답 대조표로 시각 확인되는가(자동 실격 방지)[^compliance-responsive]
+
+---
+
+## 2. 일정수식어와 1부 — 표지·인사문·목차·제안취지·제안대상영역
+
+### (a) 작성 원칙
+
+- **일정수식어**(표지·인사·목차)는 내용 가치는 낮으나 비즈니스 매너로 필수임. 세세한 배려가 제안서 전체  
+  설득력을 높이며, 허술히 한 벤더는 유저가 경계함 (p.67~68).  
+  - 표지: 수신인은 고객 회사명(대기업은 부서명까지), 타이틀은 제안내용을 간결·정확히 전달, 날짜는 제출일과  
+    일치, 자사명·로고 필수 (p.68).  
+  - 인사문: RFP 취지를 의식하고 제안 시스템 명칭을 알림. 문서에는 "귀사·당사"를 씀 (p.68~69).  
+  - 목차: 5페이지 초과 시 작성하며, 유무와 관계없이 반드시 페이지를 매김 (p.69).  
+- **테마① 제안의 취지 = 제안서에서 가장 중요한 페이지**. 극단적으로 이 1페이지만으로 제안내용을 전할 수  
+  있어야 함(컨설팅의 **엘리베이터 테스트** — 약 30초 안에 요점 전달). 1시간 발표가 갑자기 15분으로 줄어도  
+  서두에 "이 제안은 무엇인가"를 전할 페이지가 있으면 대처됨 (p.69~70).  
+- 제안취지 구성요소 = **①제안의 특징 + ②RFP에 대한 회답** 2개. 특징은 RFP를 충분히 의식한 것이어야  
+  하며, RFP가 요구하지 않은 "최신·최고성능 HW"는 벤더 의지일 뿐임. "RFP 요구를 모두 만족한다"고 회답할  
+  수 있으면 그 이상 설명이 불필요하며, **대조표는 별지**로 하고 본문엔 결론만 기술함 (p.70~71).  
+- **테마② 제안대상영역 = "수비"의 페이지**. 취지가 특징을 어필하는 "공격"이라면, 대상영역은 시스템화  
+  범위를 정의·확인해 인식 차이를 억제함. 문장(개조식)+표 병용, 세부 표는 별지로 첨부함 (p.71~72).
+
+### (b) 통신사 B2B 예시·문구
+
+- 통신 제안취지 1페이지는 **"헤드라인 1문장 + 특징 3개 + RFP 회답 1문장"** 골격이 가장 안전함. 헤드라인은  
+  고객의 WHY(경영과제)를 되돌려주는 문장으로 임원이 30초 안에 "우리 얘기구나"를 느끼게 함. 엘리베이터  
+  피치의 3C(Clear·Concise·Compelling)·결론선행(BLUF) 규율과 정합함[^elevator-asana][^bluf].  
+- 특징은 "우리가 가진 것"이 아니라 **"고객이 얻는 것"**(feature→benefit)으로 서술함 — `전국 백본 이중화  
+  보유`가 아니라 `장애 시에도 대고객 서비스가 끊기지 않음`으로 번역함. 테마 문장은 고객 중심·이점 기반일  
+  때 가독성과 수주 확률이 오름[^shipley-theme][^apmp-5box].  
+- **RFP 요구ID·RTM 정의는 rfp-guide §1·§9 참조**. 제안서(벤더)는 발주자 RTM에 "회답 상태(Y/P/N) +  
+  제안서 대응 페이지 + 근거"를 채운 미러 문서(회답 대조표)를 별지로 첨부함[^compliance-loopio].  
+
+  예시(제안취지 헤드라인, MVNO 장애통지 솔루션):  
+  > "가입자가 장애를 먼저 아는 통신사에서, 통신사가 먼저 알리는 통신사로 — 실시간 장애 통지·영향범위  
+  > 자동조회 제안"  
+
+  예시(특징 3개, benefit 서술):  
+  > "① 장애 발생 30초 내 영향 가입자 범위 자동 산출 → 대고객 통지 리드타임 단축  
+  >  ② 관제·CS·영업이 한 화면을 보는 단일 대시보드 → 부서 간 상황 전파 지연 제거  
+  >  ③ 기존 관제 시스템과 표준 연동(API) → 신규 구축 없이 예시 3개월 내 적용"  
+
+  예시(대상영역 "수비" 문구):  
+  > "본 제안 대상은 무선 코어망 장애 이벤트의 탐지·영향분석·통지 영역에 한정하며, 유선·과금·정산 연동은  
+  > 인터페이스 규격 제공 범위로 함(범위 외 항목은 §특기사항 참조)."
+
+### (c) 작성 체크리스트
+
+- [ ] 표지 5요소(수신인·타이틀·날짜·자사명·로고)와 인사문·목차 매너를 갖췄는가 (p.67~69)  
+- [ ] 제안취지가 1페이지로 엘리베이터 테스트를 통과하는가(30초 내 요점 전달) (p.69~70)  
+- [ ] 제안취지가 "특징 + RFP 회답" 2요소로 구성되고 특징이 고객 이점으로 서술됐는가 (p.70~71)  
+- [ ] 충족도 대조표는 별지로, 본문엔 "필수 전건 충족" 결론만 뒀는가 (p.71)  
+- [ ] 제안대상영역이 개조식+표로 범위를 정의하고 인식 차이를 억제하는가 (p.71~72)  
+- [ ] 회답 대조표가 발주자 RTM 요구ID와 매핑됐는가(RTM 정의는 rfp-guide §1·§9)[^compliance-loopio]
+
+---
+
+## 3. 시스템 구성 — 개념도·네트워크·하드웨어·소프트웨어
+
+### (a) 작성 원칙
+
+- 테마③ 시스템구성은 시스템 제안서에서 제일 먼저 눈에 띄는 페이지로, **시스템개념도·네트워크구성도·  
+  하드웨어구성도·소프트웨어구성도**의 4개 그림으로 표현하며 각각 독립 페이지가 됨 (p.72).  
+- **시스템개념도가 가장 중요**함. 왼쪽→오른쪽으로 업무·데이터 흐름을 두고 서브시스템 관련을 화살표로  
+  나타냄. 경영자·엔드유저 등 비전문가도 이해할 그림이 요구되며, 너무 세세하면 번잡하므로 경영자용  
+  개념도는 과감히 간소화함 (p.72).  
+- **네트워크구성도가 다음으로 중요**함. 네트워크가 기업활동의 불가결한 인프라가 되어 경영자·엔드유저  
+  관심도 높아 프레젠테이션에 빠뜨릴 수 없는 그림임 (p.73).  
+- 하드웨어·소프트웨어 구성도 2가지는 **기본적으로 별지로 돌려도 무방**함 — 정보시스템부서용 그림이어서  
+  경영자·엔드유저는 흥미가 적기 때문임(§1 2독자 원칙의 적용). 실제 벤더 제안서가 HW 설명에 과다 페이지를  
+  할애해 유저가 원하는 제안서와 갭이 큰 점을 경계함 (p.73~74).
+
+### (b) 통신사 B2B 예시·문구
+
+- 4종 도해를 "추상→구체" 계위로 배치하면 2독자를 모두 만족시킴 — 개념도(WHAT·경영자용·본체 서두) →  
+  네트워크구성도(연결·경로·본체) → HW구성도(물리 배치·별지) → SW구성도(논리 스택·별지). 업계 표기법으로는  
+  개념도가 C4의 System Context(기술 상세 배제), 나머지가 C4 Container·UML 배포도에 대응함[^c4-context][^uml-deploy].  
+- 시스템개념도 합격선은 "경영자가 30초 안에 이해하는가"임 — 박스 7±2개 이내, 제품명·프로토콜·포트 배제,  
+  좌→우 단일 방향, 색·아이콘 범례 고정. 통신 각색: "고객사 사이트 → 액세스망 → 통신사 코어/PoP →  
+  데이터센터(BSS/OSS·관리포털)" 흐름을 좌→우로 두고 경영자 관심 지표(커버리지·이중화·관리포털)만 노출함.  
+- **네트워크구성도는 통신 제안에서 차별화 소구가 가장 큰 도해**임. 담아야 할 3대 회복력 요소[^neos-resilience][^arelion-redundancy][^wraycastle-redundancy] —  
+  - **이중화(Redundancy)**: 회선/장비를 실선(주)·점선(예비) 쌍으로 그리고 "Active/Standby" 또는  
+    "Active/Active" 라벨 부기  
+  - **우회경로·경로 다이버시티**: 물리 분리된 2경로를 서로 다른 관로·국사로 우회시켜 단일 절단점(SPOF)  
+    제거, 굵기·색을 달리해 표현[^hm-pop]  
+  - **PoP 이중화(dual-homing)**: 고객 사이트가 2개 PoP에 각각 연결되는 삼각형 구도로 그려 한쪽 PoP  
+    장애 시 잔여 PoP로 서비스 지속  
+- 라벨 각색 예: "지점↔본사 구간 이중화(주회선 전용선 + 백업 회선 LTE), 경로 다이버시티(서로 다른 관로·국사  
+  경유), 접속 PoP 이중화(수도권 A-PoP / 남부권 B-PoP dual-homing), 장애 시 자동 우회(BGP/VRRP 절체)".  
+  SD-WAN 제안 시 "MPLS + 인터넷 2회선 Active-Active, 앱 인지 경로 선택·자동 페일오버"로 각색함[^cisco-sdwan].  
+- **이중화·PoP 등 기술 요구 정의 자체는 rfp-guide §4 참조**. 본 섹션은 요구를 실현하는 **도해 표현만** 다룸.
+
+### (c) 작성 체크리스트
+
+- [ ] 시스템개념도가 좌→우 흐름·박스 7±2개·제품명 배제로 경영자 30초 이해선을 넘는가 (p.72)  
+- [ ] 4종 도해가 각각 독립 페이지이며 색·아이콘 범례가 일관되는가 (p.72)  
+- [ ] HW·SW 구성도는 별지로 내리고 본체에서 "별지 p.XX 참조"로 연결했는가 (p.73~74)  
+- [ ] 네트워크구성도에 이중화·우회경로·PoP 이중화 3요소가 시각적으로 구분 표현되는가[^neos-resilience][^hm-pop]  
+- [ ] 이중화 방식(Active-Active/Standby)·절체 라벨이 §4 SLA 목표와 정합하는가  
+- [ ] 기술 요구 정의는 rfp-guide §4 참조로 넘기고 도해 표현만 담았는가(중복 회피)
+
+---
+
+## 4. 프로젝트의 내용과 운용체제 — 수행방안·운용지원·SLA·연수·PoC
+
+### (a) 작성 원칙
+
+- 테마④ 프로젝트의 내용은 "무엇을 할지"를 설명하는 파트로 **작업 플로우·역할·성과물** 3요소로 구성됨.  
+  경영자·엔드유저도 열람하므로 제대로 적으며, 성과물이 곧 납품물이 됨 (p.74).  
+- 테마⑤ 운용체제 — 제안 단계에서 운용 단계까지 검토해야 하며, 벤더가 "파는 업자"가 아닌 **파트너**이고자  
+  한다면 유저가 적절히 운용할 시스템과 함께 **운용관리 지원서비스를 제공하는 제안**을 작성함. 샘플은  
+  운용지원 3옵션((1)데이터센터 하우징·24시간 365일 감시 (2)서버 리모트 감시 (3)SE 정기방문)을 제시함 (p.74~75).  
+- **연수(교육) 제안**은 RFP 유무와 관계없이 반드시 제안함. 이유는 ①스무스한 시스템·업무 이행 ②트러블  
+  회피(무료 오해·종반 추가투자 기피 방지)임. 엔드유저 연수·관리자 연수로 나뉘며, 전부 유저가 실시하면  
+  연수 견적을 전부 제외함 (p.75~76).  
+- 운용지원·SLA 등급표·견적·PoC 결과의 **상세는 별지, 본체는 요약**으로 분리함(§1 2독자 원칙). PoC/파일럿  
+  검증 원자료도 정보시스템부서용 별지에 두고 본체엔 계획·성공기준·결론만 둠 (p.65~66, p.80~81).
+
+### (b) 통신사 B2B 예시·문구
+
+> 오너십 분리: 본 섹션은 **케어(운용 서비스·연수·안정화)·딜(SLA 상업조건)·데모(PoC)** 3팀이 공유함.  
+> **SLA 지표 정의·측정 방식·위약(서비스 크레딧) 기준은 rfp-guide §5·§8 참조**, 유지관리 요율 산정 근거는  
+> rfp-guide §6 참조. 본 섹션은 "제안서에 어떻게 담는가"만 다룸.
+
+**운용지원 3옵션의 통신 각색(케어)** — 고객 인프라 위치에 매핑함 —  
+- (1) 하우징 → 통신사/관계사 IDC 상면·코로케이션 + 운영대행("상면·전력·회선 + 운영대행 + 24/365 관제"를  
+  풀 매니지드 한 묶음으로 제시)[^idc-daou]  
+- (2) 리모트 감시 → NOC 24/365 원격 관제(RMM 기반, L1~L3 티어 지원)[^noc-inoc][^rmm-ninjaone]  
+- (3) SE 정기방문 → 정기 현장 점검·기술 자문(온사이트 PM)  
+
+**SLA를 아키텍처로 뒷받침(아키)** — "가용성 목표(정량) → 이중화 구성(수단) → 도해" 3단으로 엮어 보임.  
+나인 하나가 늘 때마다 허용 다운타임은 1/10로 줄며, **4나인 이상은 수동 대응 불가**라 이중화+자동  
+페일오버+NOC 상시감시를 세트로 도해해야 설득력이 생김[^hyperping-4nine][^techtarget-5nine].  
+
+| 가용성 목표 | 연간 허용 다운타임(참고) | 실현 아키텍처(제안 도해) |
+|---|---|---|
+| 99.9% (3-nine) | 약 8시간 46분 | 단일 사이트 서버 이중화 + 수동/반자동 절체 |
+| 99.99% (4-nine) | 약 52분 | 네트워크·스토리지·DB 다계층 이중화 + 자동 페일오버 |
+| 99.999% (5-nine, 캐리어급) | 약 5분 | 지역 이중화(Active-Active)·무중단 절체·상시 감시(NOC) |
+
+- 자동절체 4요소(감지 수단·절체 트리거·목표 절체 시간·절체 후 상태)를 네트워크구성도에 콜아웃함. 통신  
+  각색: "주회선 장애 감지 3초 → 백업회선 자동 절체(총 30초 이내), 세션 유지"[^gfg-haactive][^aerospike-failover].  
+  DR은 RTO·RPO를 축으로 매핑(RPO≈0→동기·근거리 / RPO 수 분→비동기·원거리), 하우징은 데이터센터 Tier  
+  등급(예: Tier III 이상)으로 정량 소구함[^dc-tier][^datacamp-rtorpo][^splunk-noc].  
+
+**SLA 상업조건(딜)** — 발주자 SLA 요구에 **"등급 + 월정료 + 미달 시 서비스 크레딧" 상업 패키지**로 회답함.  
+크레딧은 징벌이 아닌 **감액 배상(remedy)**으로 설계하고, At-Risk %·상한(cap)·Earn-back(만회)·기대/최소  
+목표치 이원화로 균형을 잡음[^sla-servicetonic][^sla-cio][^earnback-lawinsider].  
+
+| 등급 | 목표 가용률 | 대상 서비스 예 | 미달 시 서비스 크레딧(월 MRC 대비) |
+|---|---|---|---|
+| Gold(松) | 99.99% | 청구·개통 기간계, 관제(NOC 24/365) | 5% ~ 25% 계단식, 상한 30% |
+| Silver(竹) | 99.95% | 사내 운영 포털, OSS 조회계 | 3% ~ 15% 계단식, 상한 15% |
+| Bronze(梅) | 99.9% | 개발·테스트, 비핵심 부가 서비스 | 3% ~ 10% 계단식, 상한 10% |
+
+> 위 가용률·크레딧율은 **예시**임. 지표 정의·MTBF/MTTR 산식은 rfp-guide §5, 위약의 계약 반영은 rfp-guide  
+> §8 참조. 등급별 월정료(러닝)는 §5 견적과 연동함.
+
+**연수·안정화(케어)** — 교육은 컷오버 3주 이내에 실시(너무 일찍 하면 잊음), 대상 3분화(엔드유저/운영  
+요원·슈퍼유저/관리자)[^train-whatfix]. 컷오버 후 **하이퍼케어(4 ~ 12주)** 전담반 상주 → 지식 이전 3단계  
+(Shadow→역할 분담→독립 운영) → 정상 운용 전환을 로드맵으로 명시함[^hypercare-salesforce][^transition-msft].  
+
+**PoC/파일럿 검증(데모)** — 제안서의 PoC 절은 "완벽한 데모 약속"이 아니라 **검증 가능한 계획**으로 씀.  
+필수 6요소(검증 항목·가설·성공기준(정량)·베이스라인·측정 방법·기간/환경)를 표로 담되, 성공기준·베이스라인이  
+빠지면 합·불 판정 불가임. PoC(기술 검증, 2 ~ 4주)와 파일럿(실운영 값, 4 ~ 8주)을 구분하고, 성공기준은  
+RFP 요구ID와 추적하며 **양측 사전 합의(PoC 헌장)** 후 착수함[^poc-asana][^poc-clearfeed][^pilot-businessmap][^pov-steerlab].  
+
+| 검증 항목 | 성공기준(정량, 예시) | 베이스라인(현행) | 기간·환경 |
+|---|---|---|---|
+| 장애 감지→통지 지연 | 평균 3분 이내( ≥ 80% 단축) | 평균 15분(수기) | 2주·격리망 |
+| 영향범위 조회 응답 | P95 2초 이내 | 수기 집계 수십 분 | 2주·격리망 |
+| 통지 전달 성공률 | ≥ 99%(SMS·이메일·웹훅) | 단일채널 유실 | 파일럿 4주 |
+
+> PoC 환경은 운영망과 분리해 제안함(운영 트래픽·개인정보 무영향). 망분리·개인정보 규제 상세는 rfp-guide  
+> §4 참조. 본 섹션은 "검증 환경 표현"만 다룸.
+
+### (c) 작성 체크리스트
+
+- [ ] 작업 플로우·역할(운용 단계 RACI 포함)·성과물(운영 런북 등 납품 명시)을 담았는가 (p.74)  
+- [ ] 운용지원 3옵션을 고객 인프라 위치에 매핑하고 松竹梅 등급 비교표(본체)+상세(별지)로 분리했는가 (p.75)  
+- [ ] 가용성 목표를 "목표→이중화→도해" 3단으로 엮고 4나인 이상은 자동 페일오버+NOC를 세트로 도해했는가[^hyperping-4nine]  
+- [ ] SLA를 "등급+월정료+서비스 크레딧" 상업 패키지로 회답하고 크레딧을 감액 배상으로 설계했는가[^sla-cio]  
+- [ ] 연수를 엔드유저·관리자로 분리하고 하이퍼케어 기간·지식 이전 로드맵을 명시했는가[^hypercare-salesforce]  
+- [ ] PoC를 6요소 계획으로 쓰고 성공기준·베이스라인·격리망·사전 합의를 명시했는가[^poc-clearfeed]  
+- [ ] SLA 지표 정의·위약 기준(rfp-guide §5·§8)·규제 상세(rfp-guide §4)를 참조로 넘겨 중복을 회피했는가
+
+---
+
+## 5. 프로젝트 체제·스케줄·견적
+
+### (a) 작성 원칙
+
+- **테마⑥ 프로젝트 체제** — 담당자 어사인까지 계획한 벤더와 계약 후 대응하려는 벤더는 계획력·관리력·  
+  열의에서 차이가 남. 자사 체제뿐 아니라 유저 측 체제도 포함해 제안함. 5유의점: ①유저가 오너 결정·벤더도  
+  상응 직무자 임명 ②PM은 유저·벤더 쌍방 ③PL은 인선까지 ④사무국 필수 설치 ⑤역할·보고라인·빈도 설명 (p.76~77).  
+- **테마⑦ 스케줄** — 기본은 **마스터스케줄** 제시. 필수 3요소: ①시스템개발 스케줄(요건정의→기본설계→  
+  프로그램작성→테스트→이행→병행가동→컷오버) ②도입 스케줄(HW 도입·연수·공사) ③진척회의 스케줄. 제안  
+  단계엔 불확정 요소가 많아 정밀 간트는 의미가 적으므로 **일람성 높은 스케줄을 본체에, 정밀 간트는 별지**로  
+  둠 (p.77~78).  
+- **테마⑧ 견적** — "시스템 一式"(명세 없는 총액)이 아니라 **항목별 상세 견적**을 제시함(HW·SW·개발비·  
+  컨설팅·기타·경비). 상세도 보는 사람 레벨에 맞춰 **본체는 의사결정자용 요약, 장치별 가격·서브시스템별  
+  공수는 별지 「견적서」**로 분리함(§1 2독자 원칙). **이니셜뿐 아니라 러닝 코스트**(보수·회선료)를 반드시  
+  제시하고, 금액 임팩트 큰 미정 옵션도 제시함이 배려임 (p.78~79).  
+- 견적은 3부구성의 **마지막에 배치**해 제안서를 결말지음(의사결정자 최종 판단기준이 "얼마에"인 경우가  
+  많음). 견적에 자신 있으면 1부 취지에 포함하는 방법도 있으나 스케줄·견적 분산 배치는 나쁜 예임 (p.84~86).
+
+### (b) 통신사 B2B 예시·문구
+
+- **이니셜=NRC(초기 개통·구축비), 러닝=MRC(월정 이용료)**로 분리 표기하면 벤더 간 비교가 명확해짐.  
+  두 축을 별도 표로 분리해 "낮은 MRC + 과도한 NRC"(또는 그 반대)의 왜곡을 스스로 드러내지 않도록 정합성을  
+  유지함[^mrc-trg][^mrc-ioflood]. **NRC/MRC·TCO·유지관리 요율 산정 근거는 rfp-guide §6 참조**.  
+- **3 ~ 5년 TCO 관점**으로 총액을 구성함 — HW·SW 획득비는 생애주기 총비용의 일부에 불과하고 회선료·  
+  유지보수·운용·다운타임 비용이 대부분이므로, 낮은 이니셜만 강조한 제안은 "저가 초기제안의 함정"으로  
+  역풍을 맞음[^tco-ibm][^tco-pure]. 자주 누락되는 러닝 항목: 회선 이용료, 대역 초과 사용료(over-usage),  
+  이중화·백업회선·DR 유지비, SW 라이센스 갱신, 커스터마이징 맨먼스 단가(CR 근거), 유상 유지관리비.  
+- 단가(맨먼스·라이센스·회선 단가)를 분리 명시해야 CR 시 단가 근거로 활용 가능하며, "시스템 一式" 묶음  
+  견적은 추가비용 분쟁을 부름[^estimate-elancer][^si-inews24]. 견적 유효기간(통상 30일 내외)을 페이지  
+  하단에 고정해 환율·회선·라이센스 정책 변동 리스크를 차단함[^quote-orderbook][^quote-lawinsider].  
+
+  본체(의사결정자용) 견적 요약 — 상세는 별지 견적서로 이관:  
+
+  | 구분 | 이니셜(NRC) | 러닝(MRC 기준) | 5년 누계(TCO) |
+  |---|---|---|---|
+  | 하드웨어·장비 | ○○○원 | (보수) ○○원/월 | ○○○원 |
+  | 소프트웨어·라이센스 | ○○○원 | (갱신) ○○원/월 | ○○○원 |
+  | 회선·네트워크 | (개통) ○○○원 | (이용료) ○○원/월 | ○○○원 |
+  | 구축·개발(맨먼스) | ○○○원 | - | ○○○원 |
+  | 운용·관제(SLA 등급별) | - | ○○원/월 | ○○○원 |
+  | 합계 | **○○○원** | **○○원/월** | **○○○원** |
+
+- 복수안(松竹梅) 비교표는 행=Gold/Silver/Bronze 안, 열=이니셜·MRC·5년 TCO·가용률로 두고 동일 부분은  
+  생략, 차이만 O·×·△·수치로 강조함(MECE 중복없이).  
+- **스케줄**: 통신은 국사 실사→포설→개통 리드타임이 길어 컷오버 역산을 일반 IT보다 보수적으로 잡음  
+  (**회선 개통 리드타임·컷오버 역산 근거는 rfp-guide §1·§7 참조**). 고객사 결산기·프로모션 성수기 등 트래픽  
+  피크 중 컷오버는 SLA 위반·크레딧 리스크를 극대화하므로 마스터스케줄 설계 단계에서 회피함.
+
+### (c) 작성 체크리스트
+
+- [ ] 유저+벤더 대응 조직도·오너/PM/PL/사무국·보고라인을 제시했는가 (p.76~77)  
+- [ ] 마스터스케줄 3요소(개발·도입·진척회의)를 담고 정밀 간트는 별지로 뒀는가 (p.77~78)  
+- [ ] "시스템 一式"을 배제하고 항목별 명세로 작성했는가 (p.78)  
+- [ ] 이니셜(NRC)/러닝(MRC)을 분리하고 3 ~ 5년 TCO로 총액을 구성했는가[^mrc-trg][^tco-ibm]  
+- [ ] 본체 요약 견적 vs 별지 상세 견적서로 2독자 분리를 적용했는가 (p.78~79)  
+- [ ] 단가(CR 근거)·견적 유효기간·실비/정액 구분을 명시했는가[^quote-orderbook]  
+- [ ] 견적을 3부 마지막에 배치했는가(스케줄·견적 분산 금지) (p.84~86)  
+- [ ] 회선 리드타임·트래픽 피크 회피를 컷오버 역산에 반영했는가(근거는 rfp-guide §1·§7)
+
+---
+
+## 6. 특기사항과 별지
+
+### (a) 작성 원칙
+
+- **특기사항** = 벤더가 특별히 적어두고 싶은 것을 쓰는 파트로 **「전제조건」(거절)과 「요망」(부탁)**을 기술함 (p.79).  
+  - **거절(전제조건)**: "이 제안은 귀사 RFP를 바탕으로 작성했으므로 RFP에 없는 것은 제안하지 않았어도  
+    양해 바라며, RFP 외 요망은 별도 취급한다"를 **눈에 띄지 않게, 그러나 단호하게** 전함. 이를 선언하지  
+    않으면 사양변경 발생 시 벤더가 불리해짐 (p.79~80).  
+  - **부탁(요망)**: 유저가 준비해 줬으면 하는 인프라·퍼실리티, 교통비 등 실비 경비의 취급을 기재함 (p.79~80).  
+- 특기사항은 얼핏 유저에게 불이익 같으나 실제로는 반대임 — **리스크를 상호 공통 인식하고 책임질 측이  
+  책임지는 정상적 비즈니스**가 목적이며 결과적으로 유저에게도 메리트가 됨 (p.80).  
+- **별지** = 정보시스템부서용 기술 심화 자료임(§1 2독자 원칙). 반드시 제출할 4가지 = **상세견적(정규견적서)·  
+  RFP와의 대조표·HW 상세 스펙·SW 상세 스펙**임. 복수안(송죽매)이면 각 안 비교표를 첨부하고 대조표·비교표는  
+  일람성·알기쉬움을 위해 O·×·△·수치 평가를 도입함 (p.80~81).
+
+### (b) 통신사 B2B 예시·문구
+
+- 특기사항은 **사양변경관리(CR)의 사전 근거**임 — 제안서에 **제안 범위(In-scope)와 범위 외(Out-of-scope)**를  
+  명문화하면 계약 후 추가 요구가 "당연 포함"이 아닌 별도 CR(비용·일정 재산정)로 처리되어 범위 확대(scope  
+  creep)를 차단함[^sow-projectmanager][^sow-atlassian][^scope-beancount].  
+- **저작권·NDA·지체상금 조항의 정의·요율은 rfp-guide §8 참조**. 제안서(벤더)는 그에 대한 **회답·전제**만  
+  담음 — 예: 저작권 분리 귀속("신규 개발 산출물은 발주사 귀속, 당사 선행 저작물은 당사 귀속 + 사용권 부여"),  
+  하자보수(무상 1년·오류 수정 한정) vs 유지관리(유상) 경계, 발주사 귀책·불가항력 면책.  
+
+  전제조건(거절) 예시 문구:  
+  > 1. 본 제안은 귀사 RFP(제○호) 및 설명회 질의응답을 기준으로 작성하였으며, RFP에 명시되지 않은 요구는  
+  >    제안 범위에 포함하지 않음. RFP 외 추가 요구는 별도 협의 및 사양변경(CR) 절차로 처리함.  
+  > 2. 요구사항 확정 지연·검수 지연·귀사 제공 환경/데이터 미비·불가항력에 기인한 일정 지연은 지체상금  
+  >    면책 및 기간 연장 사유로 함.  
+  > 3. 무상 하자보수는 사업 완료일로부터 1년, 결함·오류 수정에 한정하며, 기능 추가·환경 개선·추가 교육·  
+  >    상주 지원은 유상 유지관리로 구분함.  
+
+  요망(부탁) 예시 문구:  
+  > 1. 원활한 수행을 위해 협의 장소·개발/테스트 환경(회선·계정·접근권한) 제공을 요망함.  
+  > 2. 원격지 출장·현장 지원 실비(교통비·체재비)는 사전 합의 단가로 실비정산하며 정액 항목과 구분함(견적서 참조).  
+
+- **별지(운영 관점)** — 본체 등급표·운용 제안을 뒷받침하는 실무 증거 자료로 신뢰를 얻음. 후보: 운영 런북  
+  (구축 중 동시 작성이 최고 가치), 에스컬레이션 매트릭스(직함이 아닌 책임 계층 L1~L3로 정의), 월간 SLA  
+  리포트 샘플(실적 vs 목표·시정 조치)[^runbook-nobl9][^escal-clearfeed][^escal-atlassian][^sla-report-dotcom].  
+- **RFP와의 대조표(필수 별지)**는 발주자 RTM에 회답을 채운 미러 문서임(**RTM 정의는 rfp-guide §1·§9 참조**).  
+  심각도별 MTTR 목표·위약 산정식은 rfp-guide §5·§8 참조로 넘김.
+
+### (c) 작성 체크리스트
+
+- [ ] 전제조건(거절)에 In/Out-scope·CR 절차·면책·하자/유지관리 경계·저작권 회답을 담았는가 (p.79~80)[^scope-beancount]  
+- [ ] 요망(부탁)에 환경 제공·실비정산·기존 벤더 협조를 구체화했는가 (p.79~80)  
+- [ ] 특기사항을 "상호 책임 명확화" 톤으로 쓰고 핵심만 본체·상세는 별지로 분리했는가 (p.80, p.65~66)  
+- [ ] 필수 별지 4종(상세견적·RFP 대조표·HW 상세·SW 상세)을 갖췄는가 (p.81)  
+- [ ] 운영 별지(런북·에스컬레이션·SLA 리포트)가 "실제 운영 경험"의 증거로 기능하는가[^runbook-nobl9]  
+- [ ] 대조표·비교표가 O·×·△·수치 평가로 일람성을 갖췄는가 (p.81)  
+- [ ] 저작권·NDA·지체상금 정의(rfp-guide §8)·RTM 정의(rfp-guide §1·§9)를 참조로 넘겼는가
+
+---
+
+## 7. 제안 시나리오와 소구력 — 3부구성·결론선행·트리구조
+
+### (a) 작성 원칙
+
+- 동등 레벨 제안이 다수일 때 유저가 고르는 것은 호소력이며, 호소력은 **시나리오의 우열**로 결정됨. 내용을  
+  나열만 하면 의도가 안 전해지므로 시나리오로 호소력을 부여함 (p.82~83).  
+- 좋은 시나리오 3요소 = ①알기쉬울 것(이해 노력 강요 금지) ②페이지·항목에 연속성 ③RFP 요구 충족·지정  
+  체재 준수 (p.82~83). 실현 3방법 —  
+  - **① 3부구성**: 8테마를 서론·본론·결론으로. 1부=①취지·②대상영역(전체상), 2부=③구성·④내용·⑤운용  
+    (무엇을), 3부=⑥체제·⑦스케줄·⑧견적(얼마에·언제까지). 최종 판단기준이 "얼마에"인 경우가 많아 **견적을  
+    마지막**에 배치함 (p.84~85).  
+  - **② 결론선행**: "결론적으로 이런 제안임. 왜냐하면 A·B…N이기 때문임." 이유선행형은 혼자 읽거나 중단  
+    시 전체상이 안 전해져 디메리트가 큼 (p.86~87).  
+  - **③ 트리구조**: 결론선행을 각 테마에도 적용. 트리로 자르면 본체/별지 경계 정합성을 취하기 쉽고, 유저가  
+    선택지를 한눈에 보고 상세는 별지를 참조하게 됨 (p.87~88).  
+- **소구력 = 知(논리성)·情(열의)·利(투자 대 효과)**. **RFP에 정확히 회답하는 것이 유저의 情에 호소하는  
+  최선의 수단**이며, "분발하겠습니다" 미사여구는 논리성을 희박하게 해 나쁜 인상을 줌 (p.88~89).
+
+### (b) 통신사 B2B 예시·문구
+
+- 통신 인프라 제안의 최빈 실패 = **망 구성도를 서두에 던지는 것**(경영자는 라우터·PoP 도해에서 좋은 점을  
+  못 읽음). 통신 3부구성 각색: **1부 "왜 지금·왜 우리"(문제·취지) → 2부 "어떻게"(구성·수행·운용/SLA) →  
+  3부 "얼마에·언제·누가"(체제·스케줄·견적)"**. 결론선행+트리구조의 정본은 Minto 피라미드·SCQA임 —  
+  분석은 bottom-up, 전달은 top-down[^minto-scqa][^bluf].  
+- **知情利를 아리스토텔레스 3설득(logos·pathos·ethos)에 대응**시키면 리뷰가 쉬움 — 知=logos(논리·수치),  
+  情=pathos(고객 WHY 공감), 利=효과 대비 가치/신뢰(ethos). 셋 중 하나라도 비면 슬라이드를 보강함.  
+  3부구성은 비즈니스 3막 구조(setup·confrontation·resolution)와 정합함[^duarte-3act][^reedsy-3act][^aristotle-rhetoric][^virtualspeech-epl].  
+- 통신 B2B에서 **利의 최강 증거는 PoC/파일럿 실측치**임 — "예상 효과"가 아니라 "실측 결과"로 쓰면 情  
+  (신뢰)과 利(투자근거)를 동시에 얻음. 「利」는 **Before→After 대비 + 금액 환산**으로 제시하고, 배치 순서는  
+  ①고객 문제(현행 손실) → ②PoC 실증 수치(개선) → ③금액 환산 → ④견적임. 원자료는 §6 별지, 데모 라이브는  
+  §9로 링크함[^roi-agility][^roi-imaginary].  
+
+  예시(利 결론선행 문구, PoC 근거):  
+  > "결론적으로, 본 솔루션은 장애 대고객 통지 리드타임을 PoC 실측 기준 크게 단축함(예시: 15분→3분).  
+  >  근거는 ①영향범위 자동산출 ②단일 대시보드 상황공유 ③기존 관제 무중단 연동의 3가지임(실측: 별지 4)."  
+
+  예시(情 호소 문구, 미사여구 배제):  
+  > "귀사 RFP가 반복 강조한 '가입자 신뢰'는 곧 '먼저 알리는 능력'이라 판단함. 본 제안의 모든 구성은 이  
+  >  한 가지 목표에 정렬되어 있음."  
+
+- 결론선행은 **페이지 제목 자체를 결론문장**으로 쓰는 것으로 완성됨 — `운용체제`(명사)가 아니라  
+  `24/365 NOC로 장애를 고객보다 먼저 감지함`(결론문)으로 제목을 달면 목차만 훑어도 시나리오가 읽힘.
+
+### (c) 작성 체크리스트
+
+- [ ] 8테마를 3부구성(전체상→무엇을→얼마에·언제까지)으로 배치하고 견적을 마지막에 뒀는가 (p.84~85)  
+- [ ] 시스템구성 서두 배치·대상영역 마지막 배치 등 나쁜 배치를 피했는가 (p.85~86)  
+- [ ] 문장을 결론선행으로 쓰고 페이지 제목을 결론문장으로 달았는가[^minto-scqa][^bluf]  
+- [ ] 트리구조로 본체/별지 경계를 정합화하고 복수안을 한눈에 보이게 했는가 (p.87~88)  
+- [ ] 知(수치)·情(WHY 공감)·利(효과 대비) 세 소구가 모두 채워졌는가[^virtualspeech-epl]  
+- [ ] 「利」를 Before→After + 금액 환산 + PoC 실측으로 제시했는가(정성 표현 배제)[^roi-imaginary]  
+- [ ] RFP 정확 회답으로 情에 호소하고 미사여구를 배제했는가 (p.88~89)
+
+---
+
+## 8. 제안서 작성 프로세스와 리뷰
+
+### (a) 작성 원칙
+
+- RFP 수령~제출 흐름 = 사전조사 → RFP 수령(설명회 참가) → RFP 취독 → 제안내용 검토 → 문서화 → 제출.  
+  수주 활동은 RFP 수령 전 **전초전**부터 시작되며, 우수 인재는 조기 사전교섭이 필요함 (p.90~91).  
+- RFP 설명회는 유저·벤더가 RFP를 공유하는 자리로 적극 질문·확인함. RFP 수령 후 맨 먼저 제안서 작성팀을  
+  편성하며, **PM으로 상정한 사람을 작성 멤버에 포함**시킴(①담당 의식으로 진지하게 음미 ②유저가 PM 얼굴을  
+  보고 싶어 함) (p.91~93).  
+- 작성 4단계 = ①RFP 취독·분석(팀 전원이 RFP 6요소 구조 이해, 취지·업무요구 우선) ②제안취지 확립("특징 +  
+  RFP 회답") ③시나리오별 검토 ④하나로 완성. **용어집(20~30개)**과 포맷 룰화로 생산성·정합성을 확보함 (p.93~95).  
+- **제3자 리뷰**: 리뷰 없이 제출은 반드시 회피함. 목적은 "빠짐없이·중복없이·적게·알기쉽게" 실현 확인임.  
+  작성팀과 다른 제3자 멤버가 참가하며 **최소 1회**(솜씨가 나쁘면 여러 번), 리뷰 관점에 "체재가 RFP  
+  특기사항과 일치하는지"가 포함됨 (p.95~97).
+
+### (b) 통신사 B2B 예시·문구
+
+- RFP 취독·분석 실무 = 요구 **"분해(shredding)"** — RFP 전 조항을 라인별로 쪼개 요구ID를 부여하고 회답  
+  대조표(§2·§10) 골격을 만드는 것이 착수 첫 작업임. 통신 RFP는 400개 안팎 질의·중첩 Excel 매트릭스·여러  
+  PDF에 분산된 SLA 요구·복수 규제 프레임워크로 구성돼 누락 위험이 크므로, "shall/must(필수)"와  
+  "may/preferred(권장·선택)"를 어휘로 구분해 등급화하고 **최소 2회 통독**함[^shred-loopio][^shred-lohfeld].  
+- 제3자 리뷰의 통신 각색 = **컬러팀 리뷰(Pink/Red/Gold)** — 이론의 "최소 1회 제3자 리뷰"를 다단계로  
+  정형화한 것임[^color-shipley][^color-utley][^color-sifthub].  
+  - Pink: 스토리보드·목차·작성계획의 구조적 컴플라이언스 점검(초안 20~40% 시점)  
+  - Red: 고객 관점 최종 채점 시뮬레이션(컴플라이언스·설득력·고객 포커스)  
+  - Gold: Red·가격 반영 확인 및 RFP 완전 준수·제출 준비 완료 판정  
+- 리뷰 산출물은 회답 대조표를 체크리스트로 재사용해 **필수 요구 전건 "충족" 여부**를 확인함(§1 감점 방지  
+  게이트와 동일 도구). 통신 특유 감점 포인트(SLA 미회답·커버리지 국사/PoP 누락·규제 서약 누락·이중화  
+  미기재)를 리뷰 항목에 못박음.
+
+### (c) 작성 체크리스트
+
+- [ ] RFP 수령 전 전초전(정보수집·사내 조정·우수 멤버 확보)을 수행했는가 (p.90~91)  
+- [ ] PM 후보를 작성 멤버에 포함(불가 시 리뷰 필수 참가)했는가 (p.92~93)  
+- [ ] 작성 4단계를 밟고 용어집·포맷 룰을 사전 정의했는가 (p.93~95)  
+- [ ] RFP를 라인별로 분해(shredding)해 요구ID·필수/권장을 등급화하고 2회 이상 통독했는가[^shred-loopio]  
+- [ ] 제3자 리뷰를 최소 1회(컬러팀 Pink/Red/Gold 권장) 실시했는가 (p.95~96)[^color-shipley]  
+- [ ] 리뷰에서 회답 대조표로 필수 전건 충족·통신 감점 포인트를 점검했는가
+
+---
+
+## 9. 프레젠테이션
+
+### (a) 작성 원칙
+
+- 참가 멤버는 인원 지정이 없으면 **고급매니저·PM 후보·담당 영업·SE 4~5명**이 표준이며 SE 1명이 회의록  
+  겸임. 10명 참석에 발언자 2~3명이면 평가가 낮아짐. 유저는 **PM 후보의 발표**를 강하게 희망함. 역할분담 =  
+  고급매니저(인사·커미트먼트)·영업(비용/계약 회답·흐름 관찰)·SE(기술 질문)·회의록 담당(기록·기자재) (p.100~101).  
+- **제안서 ≠ 발표자료** — 제안서는 정독으로 전체를 이해시키는 것, 발표자료는 순간적으로 요점을 파악시키는  
+  것임. 프로젝터 방식은 제안서를 그대로 투영하지 말고 요점만 남겨 **개조식·모식도**로 가공함 (p.101~102).  
+- **리허설 6점 체크** = ①시간 배분(질의응답 확보) ②시나리오(우선도) ③디자인(일관성·메시지) ④질의응답  
+  상정 ⑤회사 커미트먼트 ⑥사기 향상 (p.102~103). **실전 3유의점** = ①읽지 말고 이야기함 ②결론을 선행함  
+  ③질의응답은 마지막에 정리함 (p.103~104).  
+- 발표자료 3유의 = ①3개로 정리(문제·과제·제안 — 3은 기억되는 수) ②페이지별 결론 제시 ③그림 활용("읽는  
+  것이 아니라 보는 것"). 리허설은 필수, **자료 완성도보다 수면 우선**으로 당일 컨디션을 최고로 함 (p.104~106).
+
+### (b) 통신사 B2B 예시·문구
+
+- 통신 인프라 PT의 킬러 슬라이드는 **망 구성도 1장 + PoC 데모/영상 1개**임. 망 구성도는 발표용으로 과감히  
+  간소화(코어 노드·이중화 경로만), 상세 도면은 배포 제안서·별지로 돌림. 슬라이드를 읽지 말고 아이컨택으로  
+  전달하며 리허설을 반복함[^hbr-killer][^ethos3-talk][^duarte-storyteller].  
+- 개조식 변환 규칙 = **한 슬라이드 한 메시지, 폰트 24pt↑, 숫자는 1개만 크게**. 통신 제안 최빈 실수는 SLA  
+  지표 10여 개를 한 표에 밀어넣는 것 — 표는 배포본, 슬라이드엔 핵심 지표 1개만 확대함. 요점 3개(문제·과제·  
+  제안)로 정리하는 것이 기억·설득에 최적임[^mandel-three][^forbes-threes][^duarte-data].  
+- **PoC 데모 시연을 발표 시나리오에 못박음** — 시연은 "장애 주입 → 30초 내 영향범위 자동조회 → 통지  
+  발송" 3스텝으로 압축하고 핵심 성공 장면을 앞쪽(결론선행)에 배치함. 데모는 양날의 검이라(영업의 81%가  
+  나쁜 데모로 딜을 잃은 경험) **3단 폴백(라이브→녹화→스크린샷)**과 독립 환경·기기 이중화를 필수 준비함.  
+  오류 시 무시·침묵 금지, 짧게 사과 후 폴백으로 자연스럽게 피벗함(Fast fail)[^demo-navattic][^demo-reprise][^demo-amex][^demo-guideflow].  
+
+  예시(라이브 데모 5분 슬롯, MVNO 실시간 장애 통지):  
+  > 1. (결론 선행·15초) "지금부터 장애 발생 후 3분 내 통지·영향범위 조회를 실시간으로 보여드리겠습니다."  
+  > 2. (장애 주입·30초) 격리 환경에서 회선 장애 모의 주입 — 운영망 무영향임을 명시.  
+  > 3. (자동 통지·1분) 감지 → SMS·웹훅 통지 수신을 스톱워치와 함께 시연(핵심 성공 장면).  
+  > 4. (영향범위 조회·1.5분) 대시보드에서 영향 고객·회선 범위를 즉시 조회(P95 2초).  
+  > 5. (마무리·1분) "제안서 §7의 실측치를 방금 실시간으로 재현했습니다" — 문서↔데모 연결 강조.  
+
+- 통신 PT 질의응답의 단골 3영역(①이중화·장애복구 ②보안·망분리·개인정보 ③SLA 위약·정산) 담당(아키/  
+  아키·법무/딜)을 리허설에서 사전 배정해 릴레이로 대응함.
+
+### (c) 작성 체크리스트
+
+- [ ] 참가 4~5명·역할분담을 정하고 PM 후보가 발표(또는 적극 Q&A)하는가 (p.100~101)  
+- [ ] 발표자료를 제안서와 분리해 개조식·모식도로 가공했는가(한 슬라이드 한 메시지)[^duarte-storyteller]  
+- [ ] 리허설 6점을 점검하고 실전 3유의점(읽지 말고·결론선행·Q&A 마지막)을 지켰는가 (p.102~104)  
+- [ ] 핵심 성공 장면을 앞쪽에 배치하고 요점을 3개로 정리했는가[^mandel-three]  
+- [ ] PoC 데모를 3~4장면으로 압축하고 §4·§7과 동일 시나리오로 연결했는가[^demo-navattic]  
+- [ ] 3단 폴백(라이브→녹화→스크린샷)·독립 환경·기기 이중화를 준비했는가[^demo-reprise]  
+- [ ] 질의응답 3영역 담당을 사전 배정했는가
+
+---
+
+## 10. 제안서 샘플·워크시트 활용
+
+### (a) 작성 원칙
+
+- 워크시트(자료3, p.117~124)는 각 페이지에 기입 지침을 제시한 템플릿으로, 표지·인사부터 별지까지 순서대로  
+  채우면 제안서가 조립됨. 모든 페이지에 저작권 표기·페이지 번호를 매김 (p.117~124).  
+- 조립 순서: 표지 → 인사 → 목차 → ①제안취지 → ②제안대상영역 → ③시스템구성(4도해) → ④프로젝트내용 →  
+  ⑤운용체제 → ⑥프로젝트체제 → ⑦스케줄 → ⑧견적 → ⑨특기사항 → 별지 (p.117~124).  
+- 조립 원칙은 본문 이론과 동일함 — 「일정수식어 + 8테마 + 특기사항 + 별지」 구조, 8테마 3부구성, 결론선행  
+  스타일, 트리구조 본문/별지 구분, 2독자 원칙(본체 얇게·상세 별지)을 견적·시스템구성·운용 전반에 적용함 (p.95, p.65~66).
+
+### (b) 통신사 B2B 예시·문구
+
+- 통신 B2B 필수 추가 워크시트 칸: **네트워크 구성도(이중화·PoP)·SLA 등급표·Capacity 수치표·커버리지  
+  (국사/PoP) 목록·규제 준수 체크란·PoC 성공기준표**. 각 칸에 RFP 회답 요구ID를 부여함.  
+- **RFP 요구 회답 대조표**(필수 별지)는 발주자 RTM의 "벤더 회답열"을 채운 미러 문서임 — 회답 상태 3값  
+  (충족 Y=O / 부분충족 P=△ / 미충족 N=×), 제안서 대응 페이지, 회답 근거를 매핑함. 필수(shall/must) 요구  
+  한 건 누락도 자동 실격이 될 수 있으므로 라인별 인벤토리로 전건 추적함[^compliance-visiblethread][^compliance-acqnotes][^compliance-c2p].  
+  **RFP 요구ID·RTM·배점 정의는 rfp-guide §1·§9 참조**(제안서는 "회답 대조표"로 연결).  
+
+  통신 B2B 회답 대조표 발췌(예시):  
+
+  | 요구ID | RFP 요구(요약) | 우선순위 | 회답 | 대응 페이지 | 근거·비고 |
+  |---|---|---|---|---|---|
+  | REQ-NW-012 | 지점 간 회선 이중화(경로 물리 분리) | 필수 | Y | 본문 p.7 §3, 별지 A-2 | 이중 경로 구성도·자동 절체 30초 이내(PoC) |
+  | REQ-OP-004 | NOC 24/365·장애 통지 15분 이내 | 필수 | Y | 본문 p.11 §4, 별지 C | Gold 등급 SLA, 통지 15분 확약 |
+  | REQ-BW-020 | 지점당 대역 1Gbps 확장 옵션 | 권장 | P | 본문 p.12 §5 | 초기 500Mbps, 1Gbps는 옵션 견적(러닝) |
+  | REQ-MG-009 | 관리 포털 Open API 실시간 연동 | 선택 | N | 본문 p.16 §9 | 현재 배치 연동, 실시간 API는 로드맵 2단계 |
+
+- 문서 말미에 아래 "제안서 작성 종합 체크리스트"를 배치해 제출 전 최종 누락을 점검함.
+
+### (c) 작성 체크리스트
+
+- [ ] 워크시트를 조립 순서대로 빠짐없이 채웠는가(망라성 우선) (p.117~124)  
+- [ ] 통신 필수 추가 칸(네트워크 구성도·SLA 등급표·Capacity·커버리지·규제·PoC 기준)을 반영했는가  
+- [ ] 각 요구에 회답 요구ID를 부여해 제안서↔RTM 추적이 가능한가(RTM 정의는 rfp-guide §1·§9)[^compliance-acqnotes]  
+- [ ] 회답 대조표(별지)에 Y/P/N·대응 페이지·근거가 전건 매핑됐는가(자동 실격 방지)[^compliance-c2p]  
+- [ ] 모든 페이지에 저작권 표기·페이지 번호를 매겼는가 (p.117~124)  
+- [ ] 조립 원칙(3부구성·결론선행·트리구조·2독자)을 전반에 적용했는가 (p.95, p.65~66)
+
+---
+
+## 통신사 B2B 제안서 작성 종합 체크리스트 (누락 방지)
+
+| # | 섹션 | 점검 항목 | 근거 |
+|---|------|-----------|------|
+| 1 | 전체 | 2차 제안(고객 커스터마이즈)으로 작성, 범용 자료 돌려쓰기 금지 | (p.61) |
+| 2 | 전체 | 4조건(빠짐없이·중복없이·적게·알기쉽게=MECE) 적용 | (p.63)[^mece] |
+| 3 | 전체 | 2독자 원칙 — 본체는 의사결정자용 얇게, 상세는 별지 | (p.64~66) |
+| 4 | 전체 | 미충족 요구도 Yes/No + 전제조건·대안으로 명확 회답 | (p.63~64) |
+| 5 | §1 | 필요충분 구성요소(일정수식어+8테마+특기사항+별지) 완비 | (p.65~66) |
+| 6 | §2 | 제안취지 1페이지가 엘리베이터 테스트 통과(특징+RFP 회답) | (p.69~71)[^elevator-asana] |
+| 7 | §2 | 제안대상영역으로 범위 정의·인식 차이 억제(수비) | (p.71~72) |
+| 8 | §2·§10 | 회답 대조표가 발주자 RTM 요구ID와 매핑(RTM 정의는 rfp-guide §1·§9) | (p.71)[^compliance-loopio] |
+| 9 | §3 | 시스템개념도 경영자 30초 이해선·4종 도해 독립 페이지 | (p.72) |
+| 10 | §3 | 네트워크구성도에 이중화·우회경로·PoP 이중화 3요소 표현 | [^neos-resilience][^hm-pop] |
+| 11 | §3 | HW·SW 구성도는 별지, 기술 요구 정의는 rfp-guide §4 참조 | (p.73~74) |
+| 12 | §4 | 운용지원 3옵션 매핑·松竹梅 등급표(본체)+상세(별지) | (p.75)[^idc-daou] |
+| 13 | §4 | 가용성 목표→이중화→도해 3단, 4나인 이상 자동 페일오버+NOC | [^hyperping-4nine][^splunk-noc] |
+| 14 | §4 | SLA를 "등급+월정료+서비스 크레딧" 상업 패키지로 회답 | [^sla-servicetonic][^sla-cio] |
+| 15 | §4 | 연수(엔드유저·관리자)·하이퍼케어·지식 이전 로드맵 명시 | (p.75~76)[^hypercare-salesforce] |
+| 16 | §4 | PoC 6요소 계획·성공기준·베이스라인·격리망·사전 합의 | [^poc-clearfeed][^pilot-businessmap] |
+| 17 | §4 | SLA 지표 정의·위약(rfp-guide §5·§8)·규제(rfp-guide §4) 참조 | (rfp-guide §5·§8) |
+| 18 | §5 | 유저+벤더 조직도·오너/PM/PL/사무국·보고라인 | (p.76~77) |
+| 19 | §5 | 마스터스케줄 3요소·정밀 간트는 별지 | (p.77~78) |
+| 20 | §5 | "시스템 一式" 금지·항목별 명세·본체 요약/별지 상세 | (p.78~79)[^si-inews24] |
+| 21 | §5 | 이니셜(NRC)/러닝(MRC) 분리·3 ~ 5년 TCO 구성 | [^mrc-trg][^tco-ibm] |
+| 22 | §5 | 단가(CR 근거)·견적 유효기간·실비/정액 구분 | [^quote-orderbook] |
+| 23 | §5 | 견적을 3부 마지막 배치(NRC/MRC 산정 근거는 rfp-guide §6) | (p.84~85) |
+| 24 | §5 | 회선 리드타임·트래픽 피크 회피(근거는 rfp-guide §1·§7) | (rfp-guide §1·§7) |
+| 25 | §6 | 전제조건(In/Out-scope·CR·면책·하자/유지관리·저작권 회답) | (p.79~80)[^scope-beancount] |
+| 26 | §6 | 요망(환경 제공·실비정산·기존 벤더 협조) | (p.79~80) |
+| 27 | §6 | 필수 별지 4종(상세견적·RFP 대조표·HW·SW 상세) | (p.81) |
+| 28 | §6 | 운영 별지(런북·에스컬레이션·SLA 리포트)로 운영 경험 증명 | [^runbook-nobl9][^escal-clearfeed] |
+| 29 | §6 | 저작권·NDA·지체상금 정의는 rfp-guide §8 참조 | (rfp-guide §8) |
+| 30 | §7 | 8테마 3부구성·견적 마지막·결론선행·트리구조 | (p.84~88)[^minto-scqa] |
+| 31 | §7 | 知情利 3소구 완비·「利」 Before→After+금액 환산+PoC 실측 | (p.88~89)[^roi-imaginary] |
+| 32 | §8 | RFP 분해(shredding)·필수/권장 등급화·2회 통독 | [^shred-loopio] |
+| 33 | §8 | 제3자 리뷰 최소 1회(컬러팀 Pink/Red/Gold 권장) | (p.95~96)[^color-shipley] |
+| 34 | §9 | 발표자료 분리·개조식·핵심 3개·리허설 6점·실전 3유의점 | (p.101~104)[^duarte-storyteller] |
+| 35 | §9 | PoC 데모 3~4장면 압축·3단 폴백·§4·§7 동일 시나리오 | [^demo-navattic][^demo-reprise] |
+| 36 | §10 | 워크시트 조립 순서·통신 필수 추가 칸·저작권/페이지 번호 | (p.117~124)[^compliance-acqnotes] |
+
+---
+
+## 참고자료 출처 목록
+
+원문 이론 근거는 본문 (p.XX~XX)로 표기함(출처: `제안서작성이론.md` = `RFP+제안서매뉴얼.pdf` 제2장 p.58~107,  
+워크시트 p.117~124). 외부자료는 아래와 같음(모두 팀원 정보수집 파일에 실재하는 URL).
+
+### §1·§2·§10 (스토리텔러·리서처·스펙)
+
+[^mece]: MECE principle (Wikipedia) - https://en.wikipedia.org/wiki/MECE_principle
+[^minto-mece]: Barbara Minto: "MECE: I invented it…" (McKinsey) - https://www.mckinsey.com/alumni/news-and-events/global-news/alumni-news/barbara-minto-mece-i-invented-it-so-i-get-to-say-how-to-pronounce-it
+[^apmp-exec]: APMP Best Practice 101: How to Write a Good Executive Summary (Winning the Business) - https://winningthebusiness.com/apmp-best-practice-101s-how-to-write-a-good-executive-summary/
+[^shipley-disc]: Discriminators and Theme Statements (Shipley Associates) - https://www.shipleywins.com/training/discriminators-and-theme-statements
+[^leveragepoint]: Value Propositions for B2B Sales Teams — Economic Value, TCO, ROI (LeveragePoint) - https://www.leveragepoint.com/blog/sales/value-propositions-sales-teams-communicating-bottom-line-best-visuals-best-numbers-economic-value-tco-roi-breakeven/
+[^elevator-asana]: 15 elevator pitch examples + template & tips (Asana) - https://asana.com/resources/elevator-pitch-examples
+[^bluf]: BLUF (communication) (Wikipedia) - https://en.wikipedia.org/wiki/BLUF_(communication)
+[^apmp-5box]: APMP Executive Summaries Micro-Certification (Strategic Proposals) - https://strategicproposals.com/apmp-certification/apmp-executive-summaries-micro-certification
+[^shipley-theme]: Crafting Effective Theme Statements for Winning Proposals (Shipley) - https://www.shipleywins.com/blogs/effective-theme-statements
+[^compliance-responsive]: Proposal Compliance Matrix Guide (Responsive) - https://www.responsive.io/blog/proposal-compliance-matrix
+[^compliance-loopio]: How to Build a Proposal Compliance Matrix (Loopio) - https://loopio.com/blog/proposal-compliance-matrix/
+[^compliance-visiblethread]: What is a compliance matrix (and how can you build one)? (VisibleThread) - https://www.visiblethread.com/blog/what-is-a-compliance-matrix-and-how-can-you-build-one/
+[^compliance-acqnotes]: Proposal Compliance Matrix (AcqNotes) - https://acqnotes.com/acqnote/tasks/proposal-compliance-matrix
+[^compliance-c2p]: Checking Compliance with a Proposal Compliance Matrix (Capture2Proposal) - https://capture2proposal.com/checking-compliance-with-a-proposal-compliance-matrix/
+
+### §3 (아키 — 시스템 구성)
+
+[^c4-context]: System context diagram (C4 model) - https://c4model.com/diagrams/system-context
+[^uml-deploy]: UML deployment diagrams (UML-diagrams.org) - https://www.uml-diagrams.org/deployment-diagrams.html
+[^neos-resilience]: Ethernet resilience & diversity explained (Neos Networks) - https://neosnetworks.com/resources/blog/ethernet-resilience-diversity/
+[^hm-pop]: Ethernet Resilience: Diverse Routing & Core POP Separacy (HM Network) - https://hm-network.com/ethernet-resilience-diverse-routing-and-core-pop-separacy-ro2/
+[^arelion-redundancy]: What is network redundancy? (Arelion) - https://www.arelion.com/resources/guides/what-is-network-redundancy
+[^wraycastle-redundancy]: Why Network Redundancy Matters in Telecom (Wray Castle) - https://wraycastle.com/blogs/knowledge-base/network-redundancy-telecom
+[^cisco-sdwan]: Cisco SD-WAN for Critical Networks Infrastructure (Cisco) - https://www.cisco.com/c/en/us/solutions/enterprise/design-zone-branch-wan/sd-wan-for-critical-networks-infrastructure-wp.html
+
+### §4 (아키·케어·딜·데모 — 운용체제·SLA·연수·PoC)
+
+[^hyperping-4nine]: Four nines (99.99%) downtime (Hyperping) - https://hyperping.com/four-nines
+[^techtarget-5nine]: Five-nines availability: what it really means (TechTarget) - https://www.techtarget.com/searchnetworking/feature/The-Holy-Grail-of-five-nines-reliability
+[^gfg-haactive]: Active-Passive & Active-Active Architecture for HA (GeeksforGeeks) - https://www.geeksforgeeks.org/system-design/active-passive-active-active-architecture-for-high-availability-system/
+[^aerospike-failover]: Understanding Failover Mechanisms for High Availability (Aerospike) - https://aerospike.com/blog/understanding-failover-mechanisms/
+[^dc-tier]: Data Center Tier Classification: Uptime Institute vs TIA-942 - https://datacenterss.com/data-center-tier-classification-uptime-institute-vs-tia-942/
+[^datacamp-rtorpo]: RTO vs RPO: A Complete Guide to DR Planning (DataCamp) - https://www.datacamp.com/blog/rto-vs-rpo
+[^splunk-noc]: What Is a NOC? Network Operations Centers, Explained (Splunk) - https://www.splunk.com/en_us/blog/learn/noc-network-operations-center.html
+[^idc-daou]: 시스템 관리 서비스(코로케이션/서버 호스팅) (다우IDC) - https://www.daouidc.com/addservice/administration.do
+[^noc-inoc]: Managed NOC Services Explained: A Complete Guide (iNOC) - https://www.inoc.com/network-operations-center/managed-noc-services
+[^rmm-ninjaone]: What is RMM? Comprehensive Guide (NinjaOne) - https://www.ninjaone.com/blog/remote-monitoring-management-definition/
+[^train-whatfix]: Enterprise Software / End User Training Before and After Go-Live (Whatfix) - https://whatfix.com/blog/end-user-training/
+[^hypercare-salesforce]: What Is Hypercare? Benefits & Best Practices (Salesforce) - https://www.salesforce.com/service/hypercare/
+[^transition-msft]: Plan your support operations / Transition to support operations (Microsoft Learn) - https://learn.microsoft.com/en-us/dynamics365/guidance/implementation-guide/transition-to-support-operations
+[^sla-servicetonic]: What Is a Service based SLA? (ServiceTonic) - https://www.servicetonic.com/tutorials/service-based-sla/
+[^sla-cio]: What is an SLA? Best practices (CIO) - https://www.cio.com/article/274740/outsourcing-sla-definitions-and-solutions.html
+[^earnback-lawinsider]: Earn Back / Earnback Sample Clauses (Law Insider) - https://www.lawinsider.com/clause/earnback
+[^poc-asana]: Proof of Concept (POC): Definition, Steps & Examples (Asana) - https://asana.com/resources/proof-of-concept
+[^poc-clearfeed]: How To Build a Successful B2B POC (ClearFeed) - https://clearfeed.ai/blogs/poc-b2b-guide
+[^pilot-businessmap]: Success Criteria for a PPM Pilot: KPIs, Framework & Checklist (Businessmap) - https://businessmap.io/blog/ppm-pilot-success-criteria
+[^pov-steerlab]: What Is a Proof of Value (POV)? How It Differs From a POC (Steerlab) - https://www.steerlab.ai/blog/what-is-proof-of-value-pov
+
+### §5 (딜 — 견적)
+
+[^mrc-trg]: What is MRC vs NRC? (TRG Datacenters) - https://www.trgdatacenters.com/resource/what-is-mrc-vs-nrc/
+[^mrc-ioflood]: What is an NRC or MRC (ioflood) - https://ioflood.com/blog/what-is-an-nrc-or-mrc-understanding-charges-in-hosting-colocation-and-transit/
+[^tco-ibm]: What Is Total Cost of Ownership (TCO)? (IBM) - https://www.ibm.com/think/topics/total-cost-of-ownership
+[^tco-pure]: What Is Total Cost of Ownership (Pure Storage) - https://www.purestorage.com/knowledge/what-is-total-cost-of-ownership.html
+[^estimate-elancer]: 견적서 작성법(무료 양식) (이랜서) - https://www.elancer.co.kr/blog/detail/803
+[^si-inews24]: SI업계, 제안서 작성비용에 허리 휜다 (inews24) - http://www.inews24.com/view/95674
+[^quote-orderbook]: Understanding Quotation Validity Periods (yourorderbook) - https://yourorderbook.com/explore/understanding-quotation-validity-periods-best-practices-for-b2b-deals/
+[^quote-lawinsider]: Quotation Validity Clause Samples (Law Insider) - https://www.lawinsider.com/clause/quotation-validity
+
+### §6 (딜·케어 — 특기사항·별지)
+
+[^sow-projectmanager]: How to Write a Scope of Work (ProjectManager) - https://www.projectmanager.com/training/write-scope-work
+[^sow-atlassian]: What is a Scope of Work (Atlassian) - https://www.atlassian.com/agile/project-management/scope-of-work
+[^scope-beancount]: 범위 관리 가이드: Scope Creep 방지 (Beancount) - https://beancount.io/blog/2026/04/25/scope-management-guide-prevent-scope-creep-service-businesses
+[^runbook-nobl9]: Runbook Example: A Best Practices Guide (Nobl9) - https://www.nobl9.com/it-incident-management/runbook-example
+[^escal-clearfeed]: Incident Escalation Matrix: Definition, Format, Levels, and Examples (ClearFeed) - https://clearfeed.ai/blogs/incident-escalation-matrix
+[^escal-atlassian]: Escalation Policies for Effective Incident Management (Atlassian) - https://www.atlassian.com/incident-management/on-call/escalation-policies
+[^sla-report-dotcom]: SLA Report: How to Create an SLA Report (Dotcom-Monitor) - https://www.dotcom-monitor.com/wiki/knowledge-base/sla-report/
+
+### §7 (스토리텔러·데모 — 시나리오·소구력)
+
+[^minto-scqa]: Minto Pyramid & SCQA (ModelThinkers) - https://modelthinkers.com/mental-model/minto-pyramid-scqa
+[^duarte-3act]: Business Communication Demands a 3-Act Story Structure (Duarte) - https://www.duarte.com/blog/business-communication-demands-3-act-story-structure/
+[^reedsy-3act]: The Three-Act Structure (Reedsy) - https://reedsy.com/blog/guide/story-structure/three-act-structure/
+[^aristotle-rhetoric]: Aristotle's Rhetoric (Stanford Encyclopedia of Philosophy) - https://plato.stanford.edu/entries/aristotle-rhetoric/
+[^virtualspeech-epl]: Ethos, Pathos, Logos: 3 Pillars of Persuasion (VirtualSpeech) - https://virtualspeech.com/blog/ethos-pathos-logos-public-speaking-persuasion
+[^roi-agility]: Proving ROI — Measuring the Business Value of Enterprise AI (Agility at Scale) - https://agility-at-scale.com/implementing/roi-of-enterprise-ai/
+[^roi-imaginary]: AI Proof of Concept ROI: A Guide to De-Risk Your Investment (Imaginary Cloud) - https://www.imaginarycloud.com/blog/ai-proof-of-concept-roi-guide
+
+### §8 (리서처 — 작성 프로세스·리뷰)
+
+[^shred-loopio]: RFP Shredding: How to Break Down Requirements Quickly (Loopio) - https://loopio.com/blog/rfp-shredding/
+[^shred-lohfeld]: Tips for shredding RFPs quickly and accurately (Lohfeld) - https://lohfeldconsulting.com/blog/2022/02/tips-for-shredding-rfps-quickly-and-accurately/
+[^color-shipley]: Effective Color Team Reviews for Proposal Success (Shipley) - https://www.shipleywins.com/blogs/color-team-reviews
+[^color-utley]: Master Color Team Reviews: Pink, Red and Gold (Utley Strategies) - https://www.utleystrategies.com/blog/pink-red-gold-team-review
+[^color-sifthub]: What are proposal color team reviews? [2026 guide] (SiftHub) - https://www.sifthub.io/blog/proposal-color-team-reviews
+
+### §9 (스토리텔러·데모 — 프레젠테이션)
+
+[^hbr-killer]: How to Give a Killer Presentation (Chris Anderson, Harvard Business Review) - https://hbr.org/2013/06/how-to-give-a-killer-presentation
+[^ethos3-talk]: Don't Read to Your Audience, Talk to Them (Ethos3) - https://ethos3.com/dont-read-to-your-audience-talk-to-them/
+[^duarte-storyteller]: Nancy Duarte: The Storyteller's Guide to Remarkable Presentations (Guy Kawasaki) - https://guykawasaki.com/nancy-duarte-the-storytellers-guide-to-remarkable-presentations/
+[^duarte-data]: How to Make a Presentation with Data That Moves People (Duarte) - https://www.duarte.com/blog/how-to-make-a-presentation-with-data-that-moves-people/
+[^mandel-three]: Follow the Rule of Three (Mandel Communications) - https://www.mandel.com/blog/want-your-presentation-to-be-memorable-follow-the-rule-of-three
+[^forbes-threes]: The Power Of Threes (Forbes Business Council) - https://www.forbes.com/councils/forbesbusinesscouncil/2025/02/21/the-power-of-threes-how-to-craft-a-memorable-message/
+[^demo-amex]: How to Deliver an Engaging Product Demo (American Express Business) - https://www.americanexpress.com/en-us/business/trends-and-insights/articles/how-to-deliver-a-killer-demo/
+[^demo-navattic]: Why Most Demos Fail (and It's Not the Tech) (Navattic) - https://www.navattic.com/blog/why-most-demos-fail
+[^demo-reprise]: The Art of Failing Forward: Demo Lessons Learned (Reprise) - https://www.reprise.com/resources/blog/the-art-of-failing-forward-demo-lessons-learned
+[^demo-guideflow]: Best practices for your sales demo: 14 tips for 2026 (Guideflow) - https://www.guideflow.com/blog/sales-demo-best-practices
+
+---
+
+근거: 사내 `work/proposal/제안서작성이론.md`(원문 `RFP+제안서매뉴얼.pdf` 제2장 p.58~107 및 워크시트  
+p.117~124) + 팀원 6명 정보수집 파일(스토리텔러·아키·데모·딜·케어·리서처) 통합. 겹치는 주제의 요구  
+정의·산정 근거·규제 상세는 `guides/rfp-guide.md`(발주자 관점) 상호참조로 넘김. 외부자료는 정보수집 파일에  
+실재하는 URL만 각주로 수록함.

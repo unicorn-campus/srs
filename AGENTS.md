@@ -146,6 +146,10 @@ PoC 엔지니어 (데모)
 ## PPT 작성 가이드
 교재 PPT 스크립트 작성 시 `references/pptx-guide.md`의 스타일 가이드를 반드시 준수할 것.
 - 컬러 팔레트, 타이포그래피, 레이아웃, 컴포넌트 스타일을 참조하여 일관된 디자인 유지
+
+## 제안서 PPT 작성 가이드
+PPT 스크립트 작성 시 `references/pptx-guide.md`의 스타일 가이드를 반드시 준수할 것.
+
 ## 엑셀파일 작성 가이드
 엑셀 파일 작성 시 `references/xlsx-guide.md`를 반드시 준수할 것.
 

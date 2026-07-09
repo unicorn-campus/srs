@@ -12,7 +12,7 @@ RFP분석서를 참고하여 SRS작성 가이드에 따라 솔루션요구사항
 
 [입력]
 - RFP분석서: `work/rfp/rfp-analyze.md`
-- SRS 작성 가이드: `work/srs/srs-guide.md`
+- SRS 작성 가이드: `guides/srs-guide.md`
 - SRS 주요 항목:
   - 고객사 문제 정의
   - 제안 솔루션의 기능·범위

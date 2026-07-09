@@ -12,15 +12,15 @@
 
 [맥락]
 - 내 상황: 통신사 B2B 기획자를 위한 Claude Code 활용 SRS 작성 교육을 준비 중이며, 확정된
-  RFP(`work/rfp/RFP-{주제}.md`)와 SRS 작성 가이드(`work/srs/srs-guide.md`, 03단계 산출물)를
+  RFP(`work/rfp/RFP-{주제}.md`)와 SRS 작성 가이드(`guides/srs-guide.md`, 03단계 산출물)를
   근거로 SRS 작성 직전 단계인 RFP분석서를 만들어야 함
 - 결과물 독자: 이 분석서를 근거로 SRS 본문을 작성할 팀원 전체(특히 스펙)
-- 선행 사례: `rfp/RFP작성가이드.md` 1장(RTM 권장 컬럼: 요구ID·분류·내용·우선순위(필수·권장·선택)·
+- 선행 사례: `guides/rfp-guide.md` 1장(RTM 권장 컬럼: 요구ID·분류·내용·우선순위(필수·권장·선택)·
   출처 조항·배점 매핑·검증방법)이 본 분석서의 우선순위·추적성 체계 근거
 
 [입력]
 - RFP: `work/rfp/RFP-{주제}.md`
-- SRS 작성 가이드: `work/srs/srs-guide.md`
+- SRS 작성 가이드: `guides/srs-guide.md`
 - 입력 게이트: 위 두 파일 중 하나라도 없거나 RFP에 요구ID·취지(발주 배경)가 누락되면 즉시
   나(요청자)에게 보고하고 중단 — 임의 RFP·가이드로 대체하지 않음
 

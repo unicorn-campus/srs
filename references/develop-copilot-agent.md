@@ -62,12 +62,18 @@ Claude Opus4.8을 선택합니다.
 
 ## Knowledge에 가이드 등록  
 One Drive의 `hands-on/incident-alert/rfp`와 `hands-on/references` 폴더를 등록합니다.    
-![](images/2026-07-11-21-44-48.png)    
+![](images/2026-07-11-23-20-07.png)   
+    
 ![](images/2026-07-11-21-45-07.png)    
+  
 ![](images/2026-07-11-21-45-31.png)    
+  
 ![](images/2026-07-11-23-00-35.png)     
-![](images/2026-07-11-23-00-58.png) 
-![](images/2026-07-11-23-01-33.png) 
+  
+![](images/2026-07-11-23-00-58.png)    
+  
+![](images/2026-07-11-23-01-33.png)    
+  
 
 --- 
 

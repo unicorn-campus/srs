@@ -45,7 +45,7 @@
   | 2. RFP분석 | work/rfp | rfp | rfp-analyze.md |
 
   **복사방법**        
-  - `incident-alert` 프로젝트에 디렉토리 생성: rfp, guides, srs
+  - `incident-alert` 프로젝트에 디렉토리 생성: rfp, guides, prompts
   - 소스 디렉토리에서 복사할 파일을 멀티 선택하고 복사(CTRL-C 또는 Cmd+C)   
     ![](images/2026-07-11-17-29-45.png)  
   - `incident-alert` 프로젝트에서 대상 디렉토리 선택하고 붙여넣기(CTRL-V 또는 Cmd+V)  
@@ -57,6 +57,7 @@
 | 목적 | 소스 디렉토리 | 타겟 디렉토리 | 파일명 |
 |-------|--------------|--------------|--------|
 | SRS 작성 가이드 | guides | guides | srs-guide.md |
+| 스킬 개발 프롬프트 | prompts | prompts | skill.txt |
 
 
 
